@@ -3,11 +3,11 @@
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, User, PlusCircle, Database, LogOut, X } from 'lucide-react';
+import { Menu, User, PlusCircle, Database, LogOut, X, Shield } from 'lucide-react';
 import { useAuth } from '@/lib/AuthContext';
 
 export default function Header() {
-  const { user, loading, signOut } = useAuth();
+  const { user, loading, signOut, isAdmin } = useAuth();
   const [showDropdown, setShowDropdown] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -72,6 +72,12 @@ export default function Header() {
                   <div className="px-4 py-2 border-b border-gray-100">
                     <p className="text-sm font-semibold text-text-main truncate">{user.displayName}</p>
                     <p className="text-xs text-text-muted truncate">{user.email}</p>
+                    {isAdmin && (
+                      <span className="inline-flex items-center gap-1 mt-1 bg-yellow-100 text-yellow-700 text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                        <Shield className="w-2.5 h-2.5" />
+                        ผู้ดูแลระบบ
+                      </span>
+                    )}
                   </div>
                   <Link
                     href="/data-portal"

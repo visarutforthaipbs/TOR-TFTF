@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { BookOpen, ArrowRight, ExternalLink } from 'lucide-react';
+import { BookOpen, ArrowRight, ExternalLink, FileText } from 'lucide-react';
 
 // Same CSV parser as ContentHub — parse from public CSV
 interface Article {
@@ -88,15 +88,28 @@ export default function LatestContent() {
               rel="noopener noreferrer"
               className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg border border-gray-100 transition-all duration-300 group flex flex-col"
             >
-              <div className="relative h-48 w-full overflow-hidden bg-gray-100">
+              <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                {/* Placeholder shown when image fails */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-400 pointer-events-none">
+                  <FileText className="w-12 h-12 mb-2 opacity-40" />
+                  <span className="text-xs text-gray-400 px-4 text-center line-clamp-2">{article.title}</span>
+                </div>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={article.thumbnail}
                   alt={article.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="relative z-10 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                   referrerPolicy="no-referrer"
-                  onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                  onError={e => {
+                    const img = e.target as HTMLImageElement;
+                    const src = img.src;
+                    if (src.includes('img.youtube.com') && src.includes('maxresdefault')) {
+                      img.src = src.replace('maxresdefault', 'hqdefault');
+                      return;
+                    }
+                    img.style.display = 'none';
+                  }}
                 />
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-primary">
                   {article.mediaType}

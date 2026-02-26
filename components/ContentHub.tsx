@@ -221,16 +221,31 @@ export default function ContentHub() {
                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg border border-gray-100 transition-all duration-300 group cursor-pointer flex flex-col"
               >
                 {/* Image Container */}
-                <div className="relative h-48 w-full overflow-hidden bg-gray-100">
+                <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                  {/* Placeholder shown when image fails */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-400 pointer-events-none">
+                    <div className="w-12 h-12 mb-2 opacity-40">
+                      {MEDIA_ICONS[article.mediaType] || <FileText className="w-12 h-12" />}
+                    </div>
+                    <span className="text-xs text-gray-400 px-4 text-center line-clamp-2">{article.title}</span>
+                  </div>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={article.thumbnail}
                     alt={article.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="relative z-10 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                     referrerPolicy="no-referrer"
                     onError={e => {
-                      (e.target as HTMLImageElement).style.display = 'none';
+                      const img = e.target as HTMLImageElement;
+                      const src = img.src;
+                      // YouTube maxresdefault fallback → hqdefault (always exists)
+                      if (src.includes('img.youtube.com') && src.includes('maxresdefault')) {
+                        img.src = src.replace('maxresdefault', 'hqdefault');
+                        return;
+                      }
+                      // Hide broken image to reveal the placeholder underneath
+                      img.style.display = 'none';
                     }}
                   />
                   {/* Media Type Badge */}
