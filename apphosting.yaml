@@ -1,0 +1,31 @@
+# Firebase App Hosting configuration
+# https://firebase.google.com/docs/app-hosting
+
+runConfig:
+  # Cloud Run resources
+  cpu: 1
+  memoryMiB: 512
+  minInstances: 0
+  maxInstances: 4
+  concurrency: 80
+
+env:
+  # ── Firebase Client SDK (public, safe to expose) ──────────────────────────
+  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+    value: AIzaSyBRim1Jk13HgFFD2XQdF0A_7X19DM-5Wzs
+  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: funfai-project-2026.firebaseapp.com
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: funfai-project-2026
+  - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+    value: funfai-project-2026.firebasestorage.app
+  - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+    value: "409361857842"
+  - variable: NEXT_PUBLIC_FIREBASE_APP_ID
+    value: "1:409361857842:web:9d4dbb9ad6cd62a5776b2b"
+  - variable: NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
+    value: G-ED8TPBSKPT
+
+  # ── Site URL for SEO / Open Graph ─────────────────────────────────────────
+  - variable: NEXT_PUBLIC_SITE_URL
+    value: https://funfai.thaipbs.or.th
