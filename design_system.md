@@ -21,7 +21,7 @@ The color palette is defined in `app/globals.css` using Tailwind CSS v4 `@theme`
 
 ## 2. Typography
 
-*   **Font Family:** `Kanit` (Google Font) - A modern, sans-serif Thai font.
+*   **Font Family:** `DB Helvethaica X` (Local Font) - A modern, sans-serif Thai font. Loaded from `/public/fonts/`.
 *   **Weights:**
     *   Light (300)
     *   Regular (400) - Standard body text.

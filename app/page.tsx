@@ -1,9 +1,22 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import FeatureCards from '@/components/FeatureCards';
-import DashboardSection from '@/components/DashboardSection';
-import ContentHub from '@/components/ContentHub';
+import LatestContent from '@/components/LatestContent';
 import Footer from '@/components/Footer';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'ทันฝุ่น ทันไฟ — ติดตามสถานการณ์ PM2.5 และไฟป่า',
+  description:
+    'แพลตฟอร์มรวบรวมข้อมูล ข่าวสาร สารคดี และเครื่องมือติดตามสถานการณ์ PM 2.5 ฝุ่นควัน และไฟป่าในประเทศไทย โดย Thai PBS',
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'ทันฝุ่น ทันไฟ — ติดตามสถานการณ์ PM2.5 และไฟป่า',
+    description:
+      'แพลตฟอร์มรวบรวมข้อมูล ข่าวสาร สารคดี และเครื่องมือติดตามสถานการณ์ PM 2.5 ฝุ่นควัน และไฟป่าในประเทศไทย โดย Thai PBS',
+    url: '/',
+  },
+};
 
 export default function Home() {
   return (
@@ -17,11 +30,8 @@ export default function Home() {
       {/* ส่วน Feature Cards (3 ใบ) */}
       <FeatureCards />
       
-      {/* ส่วน Dashboard (ฝุ่นไฟใกล้ฉัน) */}
-      <DashboardSection />
-      
-      {/* ส่วน Content Hub (ฝุ่นไฟวันนี้) */}
-      <ContentHub />
+      {/* ส่วนสื่อสารและความรู้ล่าสุด */}
+      <LatestContent />
       
       {/* ส่วน Footer */}
       <Footer />

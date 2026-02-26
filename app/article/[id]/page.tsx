@@ -2,6 +2,45 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
 import { Share2, MessageCircle, ThumbsUp, Calendar, User } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  // In a real app, fetch article data from API/DB here
+  const title = 'ทำความเข้าใจปรากฏการณ์เอลนีโญกับผลกระทบต่อฝุ่นควันภาคเหนือ';
+  const description =
+    'ปรากฏการณ์เอลนีโญ ไม่ได้ส่งผลแค่เรื่องความแห้งแล้ง แต่ยังเป็นตัวแปรสำคัญที่ทำให้สถานการณ์ฝุ่นควัน PM 2.5 ในภาคเหนือทวีความรุนแรง';
+
+  return {
+    title,
+    description,
+    alternates: { canonical: `/article/${id}` },
+    openGraph: {
+      title: `${title} | ทันฝุ่น ทันไฟ`,
+      description,
+      url: `/article/${id}`,
+      type: 'article',
+      images: [
+        {
+          url: `/api/og?title=${encodeURIComponent(title)}`,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`/api/og?title=${encodeURIComponent(title)}`],
+    },
+  };
+}
 
 export default async function ArticlePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -17,6 +56,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ id: st
             src={`https://picsum.photos/seed/dust${id}/1920/1080`}
             alt="Article Cover"
             fill
+            sizes="100vw"
             className="object-cover opacity-60"
             referrerPolicy="no-referrer"
           />
