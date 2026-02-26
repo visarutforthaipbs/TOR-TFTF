@@ -125,7 +125,7 @@ export default function ContentHub() {
   }, [articles, activeMediaType, activeCategory, searchQuery]);
 
   return (
-    <section className="py-16 px-4 bg-gray-50" id="content">
+    <section className="py-16 px-4 bg-bg-light" id="content">
       <div className="container mx-auto max-w-6xl">
         {/* Section Header & Search */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
@@ -161,10 +161,8 @@ export default function ContentHub() {
               onClick={() => setActiveMediaType(type)}
               className={`whitespace-nowrap flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 activeMediaType === type
-                  ? type === 'ทั้งหมด'
-                    ? 'bg-text-main text-white'
-                    : 'bg-primary text-white'
-                  : 'bg-white text-gray-600 border border-gray-200 hover:border-primary hover:text-primary'
+                  ? 'bg-primary text-white'
+                  : 'bg-white text-text-muted border border-gray-200 hover:border-primary hover:text-primary'
               }`}
             >
               {MEDIA_ICONS[type]}
@@ -183,7 +181,7 @@ export default function ContentHub() {
                 className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                   activeCategory === cat
                     ? 'bg-primary/10 text-primary border border-primary/30'
-                    : 'bg-white text-gray-500 border border-gray-100 hover:border-gray-300'
+                    : 'bg-white text-text-muted border border-gray-100 hover:border-gray-300'
                 }`}
               >
                 {cat}
@@ -265,7 +263,7 @@ export default function ContentHub() {
                     {article.title}
                   </h3>
                   <div className="mt-auto flex items-center justify-between text-sm text-text-muted pt-4 border-t border-gray-100">
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-gray-50 text-xs font-medium text-gray-600">
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-bg-light text-xs font-medium text-text-muted">
                       {article.category}
                     </span>
                     <span className="flex items-center gap-1 text-xs text-primary font-medium">
@@ -282,8 +280,8 @@ export default function ContentHub() {
         {!loading && filtered.length === 0 && (
           <div className="text-center py-12 bg-white rounded-2xl border border-gray-100">
             <Search className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-            <h3 className="text-lg font-medium text-gray-900 mb-1">ไม่พบเนื้อหาที่ค้นหา</h3>
-            <p className="text-gray-500">ลองเปลี่ยนคำค้นหาหรือตัวกรองหมวดหมู่อีกครั้ง</p>
+            <h3 className="text-lg font-medium text-text-main mb-1">ไม่พบเนื้อหาที่ค้นหา</h3>
+            <p className="text-text-muted">ลองเปลี่ยนคำค้นหาหรือตัวกรองหมวดหมู่อีกครั้ง</p>
           </div>
         )}
 

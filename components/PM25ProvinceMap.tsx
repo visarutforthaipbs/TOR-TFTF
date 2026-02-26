@@ -236,7 +236,7 @@ export default function PM25ProvinceMap({ initialData, lastUpdated }: Props) {
           {/* Legend pills */}
           <div className="flex flex-wrap gap-1.5 mb-3">
             {PM25_LEGEND.map(l => (
-              <div key={l.label} className="flex items-center gap-1 text-xs text-gray-600 bg-gray-50 px-1.5 py-0.5 rounded-full border border-gray-100">
+              <div key={l.label} className="flex items-center gap-1 text-xs text-text-muted bg-bg-light px-1.5 py-0.5 rounded-full border border-gray-100">
                 <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: l.color }} />
                 <span>{l.label}</span>
                 <span className="text-gray-400">{l.range}</span>
@@ -444,7 +444,7 @@ export default function PM25ProvinceMap({ initialData, lastUpdated }: Props) {
                 {showPM25 && (
                   <div className="pl-5 space-y-1">
                     {PM25_LEGEND.map(l => (
-                      <div key={l.label} className="flex items-center gap-1.5 text-xs text-gray-600">
+                      <div key={l.label} className="flex items-center gap-1.5 text-xs text-text-muted">
                         <span className="w-3 h-3 rounded-sm flex-shrink-0" style={{ background: l.color, opacity: 0.8 }} />
                         <span>{l.label}</span>
                         <span className="text-gray-400 ml-auto pl-2">{l.range}</span>
@@ -470,7 +470,7 @@ export default function PM25ProvinceMap({ initialData, lastUpdated }: Props) {
                 {showHotspots && (
                   <div className="pl-5 space-y-1">
                     {HOTSPOT_LEGEND.map(l => (
-                      <div key={l.label} className="flex items-center gap-1.5 text-xs text-gray-600">
+                      <div key={l.label} className="flex items-center gap-1.5 text-xs text-text-muted">
                         <span className="w-2.5 h-2.5 rounded-full flex-shrink-0 border border-white shadow-sm" style={{ background: l.color }} />
                         <span>{l.label}</span>
                       </div>

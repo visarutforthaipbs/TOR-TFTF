@@ -31,7 +31,7 @@ export default function AdminArticles() {
 
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="border-b border-gray-200 text-gray-500 text-sm bg-white">
+            <tr className="border-b border-gray-200 text-text-muted text-sm bg-white">
               <th className="py-4 px-6 font-medium">หัวข้อบทความ</th>
               <th className="py-4 px-6 font-medium">หมวดหมู่</th>
               <th className="py-4 px-6 font-medium">ผู้เขียน</th>
@@ -48,12 +48,12 @@ export default function AdminArticles() {
               <tr key={article.id} className="border-b border-gray-50 hover:bg-gray-50 transition-colors">
                 <td className="py-4 px-6 font-medium text-text-main">{article.title}</td>
                 <td className="py-4 px-6">
-                  <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-medium">
+                  <span className="bg-bg-light text-text-muted px-3 py-1 rounded-full text-xs font-medium">
                     {article.category}
                   </span>
                 </td>
-                <td className="py-4 px-6 text-gray-500">{article.author}</td>
-                <td className="py-4 px-6 text-gray-500">{article.date}</td>
+                <td className="py-4 px-6 text-text-muted">{article.author}</td>
+                <td className="py-4 px-6 text-text-muted">{article.date}</td>
                 <td className="py-4 px-6 text-right">
                   <div className="flex items-center justify-end gap-2">
                     <button className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">

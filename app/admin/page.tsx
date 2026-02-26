@@ -12,7 +12,7 @@ export default function AdminDashboard() {
             <FileText className="w-6 h-6" />
           </div>
           <div>
-            <p className="text-sm text-gray-500 font-medium">บทความทั้งหมด</p>
+            <p className="text-sm text-text-muted font-medium">บทความทั้งหมด</p>
             <p className="text-2xl font-bold text-text-main">124</p>
           </div>
         </div>
@@ -22,7 +22,7 @@ export default function AdminDashboard() {
             <AlertTriangle className="w-6 h-6" />
           </div>
           <div>
-            <p className="text-sm text-gray-500 font-medium">รายงาน C-Site รอดำเนินการ</p>
+            <p className="text-sm text-text-muted font-medium">รายงาน C-Site รอดำเนินการ</p>
             <p className="text-2xl font-bold text-text-main">12</p>
           </div>
         </div>
@@ -32,7 +32,7 @@ export default function AdminDashboard() {
             <Users className="w-6 h-6" />
           </div>
           <div>
-            <p className="text-sm text-gray-500 font-medium">ผู้ใช้งานระบบ</p>
+            <p className="text-sm text-text-muted font-medium">ผู้ใช้งานระบบ</p>
             <p className="text-2xl font-bold text-text-main">1,450</p>
           </div>
         </div>
@@ -42,7 +42,7 @@ export default function AdminDashboard() {
             <Eye className="w-6 h-6" />
           </div>
           <div>
-            <p className="text-sm text-gray-500 font-medium">ยอดเข้าชมวันนี้</p>
+            <p className="text-sm text-text-muted font-medium">ยอดเข้าชมวันนี้</p>
             <p className="text-2xl font-bold text-text-main">3,200</p>
           </div>
         </div>
@@ -55,12 +55,12 @@ export default function AdminDashboard() {
           {[1, 2, 3].map((i) => (
             <div key={i} className="flex items-center justify-between py-3 border-b border-gray-50 last:border-0">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-500">
+                <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-text-muted">
                   <AlertTriangle className="w-5 h-5" />
                 </div>
                 <div>
                   <p className="font-medium text-text-main">มีรายงานสถานการณ์ใหม่จาก C-Site (อ.แม่ริม)</p>
-                  <p className="text-sm text-gray-500">โดย สมชาย ใจดี • 10 นาทีที่แล้ว</p>
+                  <p className="text-sm text-text-muted">โดย สมชาย ใจดี • 10 นาทีที่แล้ว</p>
                 </div>
               </div>
               <button className="text-primary text-sm font-medium hover:underline">ตรวจสอบ</button>

@@ -81,21 +81,21 @@ export default async function ArticlePage({ params }: { params: Promise<{ id: st
           {/* Social Share Bar */}
           <div className="flex items-center justify-between border-b border-gray-200 pb-6 mb-8">
             <div className="flex gap-4">
-              <button className="flex items-center gap-2 text-gray-500 hover:text-primary transition-colors">
+              <button className="flex items-center gap-2 text-text-muted hover:text-primary transition-colors">
                 <ThumbsUp className="w-5 h-5" /> <span className="text-sm font-medium">124</span>
               </button>
-              <button className="flex items-center gap-2 text-gray-500 hover:text-primary transition-colors">
+              <button className="flex items-center gap-2 text-text-muted hover:text-primary transition-colors">
                 <MessageCircle className="w-5 h-5" /> <span className="text-sm font-medium">18</span>
               </button>
             </div>
-            <button className="flex items-center gap-2 text-gray-500 hover:text-primary transition-colors">
+            <button className="flex items-center gap-2 text-text-muted hover:text-primary transition-colors">
               <Share2 className="w-5 h-5" /> <span className="text-sm font-medium">แชร์</span>
             </button>
           </div>
 
           {/* Typography Content */}
           <article className="prose prose-lg prose-orange max-w-none">
-            <p className="lead text-xl text-gray-600 font-medium mb-8">
+            <p className="lead text-xl text-text-muted font-medium mb-8">
               ปรากฏการณ์เอลนีโญ (El Niño) ไม่ได้ส่งผลแค่เรื่องความแห้งแล้ง แต่ยังเป็นตัวแปรสำคัญที่ทำให้สถานการณ์ฝุ่นควัน PM 2.5 ในภาคเหนือของประเทศไทยทวีความรุนแรงขึ้นอย่างมีนัยสำคัญ
             </p>
             
@@ -108,7 +108,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ id: st
             {/* Interactive Element Mockup (Video/Chart) */}
             <div className="my-10 bg-gray-100 rounded-2xl p-8 text-center border border-gray-200">
               <h3 className="text-lg font-bold text-text-main mb-2">Interactive Data Visualization</h3>
-              <p className="text-gray-500 mb-4">ส่วนแสดงผลกราฟิกแบบโต้ตอบ (Interactive Chart) หรือวิดีโอสารคดี</p>
+              <p className="text-text-muted mb-4">ส่วนแสดงผลกราฟิกแบบโต้ตอบ (Interactive Chart) หรือวิดีโอสารคดี</p>
               <div className="w-full h-64 bg-white rounded-xl shadow-inner flex items-center justify-center">
                 <span className="text-gray-400">[ Interactive Element Placeholder ]</span>
               </div>

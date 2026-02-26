@@ -19,7 +19,7 @@ export default function Footer() {
 
         {/* Copyright & Contact */}
         <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-8 text-white text-center">
-          <span className="text-xs sm:text-sm">&copy; 2025 Public intelligence</span>
+          <span className="text-xs sm:text-sm">&copy; 2026 Public intelligence</span>
           <Link href="/contact" className="text-xs sm:text-sm font-medium hover:underline">ติดต่อเรา</Link>
         </div>
       </div>

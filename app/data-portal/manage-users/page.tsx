@@ -198,7 +198,7 @@ export default function ManageUsersPage() {
                           /* eslint-disable-next-line @next/next/no-img-element */
                           <img src={u.photoURL} alt="" className="w-10 h-10 rounded-full flex-shrink-0" referrerPolicy="no-referrer" />
                         ) : (
-                          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0 text-gray-500 font-bold text-sm">
+                          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0 text-text-muted font-bold text-sm">
                             {(u.displayName || u.email || '?')[0].toUpperCase()}
                           </div>
                         )}
@@ -208,7 +208,7 @@ export default function ManageUsersPage() {
                           <div className="flex items-center gap-2">
                             <p className="font-medium text-text-main truncate text-sm">{u.displayName || '(ไม่มีชื่อ)'}</p>
                             {isSelf && (
-                              <span className="text-[10px] bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded-full">คุณ</span>
+                              <span className="text-[10px] bg-bg-light text-text-muted px-1.5 py-0.5 rounded-full">คุณ</span>
                             )}
                           </div>
                           <p className="text-xs text-text-muted truncate">{u.email}</p>
@@ -222,7 +222,7 @@ export default function ManageUsersPage() {
                               Admin
                             </span>
                           ) : (
-                            <span className="inline-flex items-center gap-1 bg-gray-100 text-gray-600 text-xs font-semibold px-2.5 py-1 rounded-full">
+                            <span className="inline-flex items-center gap-1 bg-bg-light text-text-muted text-xs font-semibold px-2.5 py-1 rounded-full">
                               <User className="w-3 h-3" />
                               User
                             </span>

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -28,9 +29,9 @@ export default function Hero() {
           แพลตฟอร์มรวบรวมข้อมูล ข่าวสาร และเครื่องมือจัดการปัญหา PM 2.5 ในเชียงใหม่ เพื่อคุณภาพชีวิตที่ดีกว่า
         </p>
         {/* Call to Action Button */}
-        <button className="bg-primary text-white font-semibold py-2.5 px-6 sm:py-3 sm:px-8 rounded-full shadow-lg hover:bg-primary-dark transition-colors duration-300 text-sm sm:text-base">
+        <Link href="/dashboard" className="inline-block bg-primary text-white font-semibold py-2.5 px-6 sm:py-3 sm:px-8 rounded-full shadow-lg hover:bg-primary-dark transition-colors duration-300 text-sm sm:text-base">
           ดูสถานการณ์ฝุ่นวันนี้
-        </button>
+        </Link>
       </div>
     </section>
   );

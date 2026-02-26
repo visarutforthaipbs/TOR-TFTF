@@ -48,7 +48,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-5">
               <div className="lg:col-span-2 bg-primary p-6 sm:p-10 text-white flex flex-col justify-between">
                 <div>

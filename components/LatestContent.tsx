@@ -65,7 +65,7 @@ export default function LatestContent() {
   if (!loaded || articles.length === 0) return null;
 
   return (
-    <section className="py-16 px-4 bg-gray-50">
+    <section className="py-16 px-4 bg-bg-light">
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8 sm:mb-10">
@@ -123,7 +123,7 @@ export default function LatestContent() {
                   {article.title}
                 </h3>
                 <div className="mt-auto flex items-center justify-between text-sm text-text-muted pt-4 border-t border-gray-100">
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-gray-50 text-xs font-medium text-gray-600">
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-bg-light text-xs font-medium text-text-muted">
                     {article.category}
                   </span>
                   <span className="flex items-center gap-1 text-xs text-primary font-medium">
