@@ -33,7 +33,7 @@ const COLLECTION = 'datasets';
 
 // ── Read ─────────────────────────────────────────────────────────────────────
 export async function fetchDatasets(): Promise<DatasetDoc[]> {
-  const q = query(collection(db, COLLECTION), orderBy('category'), orderBy('title'));
+  const q = query(collection(db, COLLECTION), orderBy('title'));
   const snap = await getDocs(q);
   return snap.docs.map(d => ({ id: d.id, ...d.data() } as DatasetDoc));
 }
