@@ -7,14 +7,14 @@ export default function Footer() {
       <div className="container mx-auto max-w-6xl flex flex-col items-center gap-6 sm:gap-8">
         {/* Partner Logos */}
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-          <Image src="/logos/partners-1.svg" alt="Partner 1" width={120} height={40} className="h-8 sm:h-10 w-auto object-contain" />
-          <Image src="/logos/partners-2.svg" alt="Partner 2" width={120} height={40} className="h-8 sm:h-10 w-auto object-contain" />
-          <Image src="/logos/partners-3.svg" alt="Partner 3" width={120} height={40} className="h-8 sm:h-10 w-auto object-contain" />
-          <Image src="/logos/partners-4.svg" alt="Partner 4" width={120} height={40} className="h-8 sm:h-10 w-auto object-contain" />
-          <Image src="/logos/partners-5.svg" alt="Partner 5" width={120} height={40} className="h-8 sm:h-10 w-auto object-contain" />
-          <Image src="/logos/partners-6.svg" alt="Partner 6" width={120} height={40} className="h-8 sm:h-10 w-auto object-contain" />
-          <Image src="/logos/partners-7.svg" alt="Partner 7" width={120} height={40} className="h-8 sm:h-10 w-auto object-contain" />
-          <Image src="/logos/partners-8.svg" alt="Partner 8" width={120} height={40} className="h-8 sm:h-10 w-auto object-contain" />
+          <Image src="/logos/partners-1.svg" alt="Partner 1" width={120} height={40} className="h-8 sm:h-10 object-contain" style={{ width: 'auto' }} />
+          <Image src="/logos/partners-2.svg" alt="Partner 2" width={120} height={40} className="h-8 sm:h-10 object-contain" style={{ width: 'auto' }} />
+          <Image src="/logos/partners-3.svg" alt="Partner 3" width={120} height={40} className="h-8 sm:h-10 object-contain" style={{ width: 'auto' }} />
+          <Image src="/logos/partners-4.svg" alt="Partner 4" width={120} height={40} className="h-8 sm:h-10 object-contain" style={{ width: 'auto' }} />
+          <Image src="/logos/partners-5.svg" alt="Partner 5" width={120} height={40} className="h-8 sm:h-10 object-contain" style={{ width: 'auto' }} />
+          <Image src="/logos/partners-6.svg" alt="Partner 6" width={120} height={40} className="h-8 sm:h-10 object-contain" style={{ width: 'auto' }} />
+          <Image src="/logos/partners-7.svg" alt="Partner 7" width={120} height={40} className="h-8 sm:h-10 object-contain" style={{ width: 'auto' }} />
+          <Image src="/logos/partners-8.svg" alt="Partner 8" width={120} height={40} className="h-8 sm:h-10 object-contain" style={{ width: 'auto' }} />
         </div>
 
         {/* Copyright & Contact */}
