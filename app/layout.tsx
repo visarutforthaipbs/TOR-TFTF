@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   creator: 'Thai PBS Public Intelligence',
   publisher: 'Thai PBS',
   icons: {
-    icon: '/logos/logo.svg',
-    apple: '/logos/logo.svg',
+    icon: '/logos/new-logo-favicon.svg',
+    apple: '/logos/new-logo-favicon.svg',
   },
   openGraph: {
     type: 'website',

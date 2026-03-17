@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
-import { BookOpen, Search, PlayCircle, FileText, Tv, Film, MessageSquare, ExternalLink, RefreshCw, ChevronDown } from 'lucide-react';
+import { BookOpen, Search, PlayCircle, FileText, Tv, Film, MessageSquare, ExternalLink, RefreshCw, ChevronDown, PenSquare } from 'lucide-react';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 interface Article {
@@ -151,6 +151,24 @@ export default function ContentHub() {
             />
             <Search className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
           </div>
+        </div>
+
+        {/* Submit Content CTA */}
+        <div className="mb-8 p-6 bg-gradient-to-r from-primary/5 to-orange-50 rounded-2xl border border-primary/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <h3 className="text-lg font-bold text-text-main mb-1">ร่วมส่งเนื้อหาของคุณ</h3>
+            <p className="text-sm text-text-muted">มีเรื่องราวเกี่ยวกับฝุ่น PM2.5 หรือไฟป่าในพื้นที่ของคุณ? ส่งข่าว บทความ หรือสื่อผ่าน Thai PBS Locals</p>
+          </div>
+          <a
+            href="https://www.thaipbs.or.th/locals/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition-colors whitespace-nowrap shadow-sm"
+          >
+            <PenSquare className="w-5 h-5" />
+            ส่งเนื้อหา
+            <ExternalLink className="w-4 h-4 opacity-70" />
+          </a>
         </div>
 
         {/* Media Type Tabs */}

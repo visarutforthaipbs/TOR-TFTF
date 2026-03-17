@@ -28,7 +28,7 @@ export default function Header() {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo Section */}
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/logos/logo.svg" alt="ทันฝุ่น ทันไฟ" width={73} height={61} className="h-10 w-auto" priority />
+          <Image src="/logos/new-logo-favicon.svg" alt="ทันฝุ่น ทันไฟ" width={73} height={61} className="h-10 w-auto" priority />
         </Link>
         
         {/* Desktop Navigation Menu */}

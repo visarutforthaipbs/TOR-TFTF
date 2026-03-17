@@ -89,7 +89,7 @@ export default function LoginPage() {
           <div className="bg-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100 max-w-md w-full mx-auto">
             <div className="text-center mb-8">
               <div className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-white font-bold mx-auto mb-4">
-                <Image src="/logos/logo.svg" alt="Logo" width={40} height={40} className="w-8 h-8" />
+                <Image src="/logos/new-logo-favicon.svg" alt="Logo" width={40} height={40} className="w-8 h-8" />
               </div>
               <h2 className="text-2xl font-bold text-text-main">เข้าสู่ระบบ</h2>
               <p className="text-text-muted mt-2 text-sm">เพื่อเข้าถึงคลังข้อมูลและดาวน์โหลดชุดข้อมูล</p>

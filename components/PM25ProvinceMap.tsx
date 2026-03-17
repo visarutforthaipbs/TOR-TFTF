@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { MapContainer, TileLayer, GeoJSON, Marker, Tooltip } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -67,6 +67,33 @@ const HOTSPOT_LEGEND = [
   { label: 'ขนาดใหญ่ (> 200 MW)',  color: '#dc2626' },
 ];
 
+// ── Point-in-polygon (ray casting) to clip hotspots to Thailand ──────────────
+function pointInRing(lat: number, lng: number, ring: number[][]): boolean {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const yi = ring[i][0], xi = ring[i][1]; // GeoJSON coord = [lng, lat]
+    const yj = ring[j][0], xj = ring[j][1];
+    if ((yi > lng) !== (yj > lng) && lat < ((xj - xi) * (lng - yi)) / (yj - yi) + xi) {
+      inside = !inside;
+    }
+  }
+  return inside;
+}
+
+function pointInGeoJSON(lat: number, lng: number, geo: any): boolean {
+  for (const feature of geo.features) {
+    const g = feature.geometry;
+    if (g.type === 'Polygon') {
+      if (pointInRing(lat, lng, g.coordinates[0])) return true;
+    } else if (g.type === 'MultiPolygon') {
+      for (const poly of g.coordinates) {
+        if (pointInRing(lat, lng, poly[0])) return true;
+      }
+    }
+  }
+  return false;
+}
+
 // ── Main component ────────────────────────────────────────────────────────────
 export default function PM25ProvinceMap({ initialData, lastUpdated }: Props) {
   const [geoJson, setGeoJson]                   = useState<any>(null);
@@ -121,6 +148,12 @@ export default function PM25ProvinceMap({ initialData, lastUpdated }: Props) {
       .then((data: HotspotPoint[]) => { setHotspots(data); setHotspotLoading(false); })
       .catch(() => setHotspotLoading(false));
   }, []);
+
+  // Clip hotspots to Thailand polygon so they don't show as a visible square
+  const clippedHotspots = useMemo(() => {
+    if (!geoJson || hotspots.length === 0) return hotspots;
+    return hotspots.filter(hs => pointInGeoJSON(hs.lat, hs.lng, geoJson));
+  }, [hotspots, geoJson]);
 
   // Helper: resolve province data from a GeoJSON feature
   const resolveFeature = useCallback((feature: any): Pm25Province | null => {
@@ -250,7 +283,7 @@ export default function PM25ProvinceMap({ initialData, lastUpdated }: Props) {
             <span className="font-medium text-orange-700">จุดความร้อนวันนี้:</span>
             {hotspotLoading
               ? <span className="text-orange-400 italic">กำลังโหลด…</span>
-              : <span className="font-bold text-orange-700">{hotspots.length} จุด</span>
+              : <span className="font-bold text-orange-700">{clippedHotspots.length} จุด</span>
             }
           </div>
         </div>
@@ -342,7 +375,7 @@ export default function PM25ProvinceMap({ initialData, lastUpdated }: Props) {
             />
           )}
 
-          {showHotspots && hotspots.map((hs, i) => {
+          {showHotspots && clippedHotspots.map((hs, i) => {
             const icon = getFireIcon(hs.frp, hs.confidence);
             return (
               <Marker

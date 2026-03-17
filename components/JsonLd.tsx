@@ -33,7 +33,7 @@ function buildOrganizationSchema() {
     name: 'Thai PBS Public Intelligence',
     alternateName: 'ทันฝุ่น ทันไฟ',
     url: SITE_URL,
-    logo: `${SITE_URL}/logos/logo.svg`,
+    logo: `${SITE_URL}/logos/new-logo-favicon.svg`,
     sameAs: [
       'https://www.thaipbs.or.th',
       'https://www.facebook.com/ThaiPBS',
@@ -68,7 +68,7 @@ function buildArticleSchema(data: Record<string, unknown>) {
       name: 'Thai PBS',
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_URL}/logos/logo.svg`,
+        url: `${SITE_URL}/logos/new-logo-favicon.svg`,
       },
     },
     mainEntityOfPage: {

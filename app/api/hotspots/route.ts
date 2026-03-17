@@ -39,8 +39,8 @@ function parseHotspotCsv(csv: string): HotspotPoint[] {
 export const revalidate = 3600; // revalidate every hour
 
 export async function GET() {
-  // Full Thailand bounding box: W,S,E,N
-  const bbox = '97.5,5.5,105.7,20.5';
+  // Thailand bounding box (slightly padded): W,S,E,N
+  const bbox = '97.3,5.4,105.8,20.6';
   const key  = '6d93fd438409ae8d0d19a793a973000b';
 
   // Fetch both VIIRS sources (SNPP + NOAA-20) with 2-day window
